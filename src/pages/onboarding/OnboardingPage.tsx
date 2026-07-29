@@ -41,7 +41,7 @@ export function OnboardingPage() {
   const [codingLevel, setCodingLevel] = useState('intermediate');
   const [error, setError] = useState<string | null>(null);
 
-  const stepNames = ['Welcome', 'English', 'Coding', 'Experience', 'Goals', 'Companies', 'Roadmap', 'Done'];
+  const stepNames = ['Welcome', 'Your Level', 'Goals', 'Done'];
 
   const toggle = (list: string[], setter: (v: string[]) => void, value: string, max?: number) => {
     if (list.includes(value)) {
