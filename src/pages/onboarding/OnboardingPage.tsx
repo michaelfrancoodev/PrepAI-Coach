@@ -54,7 +54,8 @@ export function OnboardingPage() {
 
   const updateProfile = async (patch: Record<string, unknown>) => {
     if (!user) return;
-    await supabase.from('profiles').update(patch).eq('id', user.id);
+    const { error: updateErr } = await supabase.from('profiles').update(patch).eq('id', user.id);
+    if (updateErr) throw new Error(updateErr.message);
   };
 
   const next = () => {
